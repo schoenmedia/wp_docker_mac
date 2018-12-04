@@ -24,7 +24,6 @@ git clone https://github.com/schoenmedia/wp_docker_mac.git PROJEKT && cd PROJEKT
 cmd/init
 cmd/terminal
 
-```bash
 rm index.php
 ./install-wordpress
 ```
