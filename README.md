@@ -22,12 +22,11 @@ or an other option: [Advanced / optional](https://github.com/EugenMayer/docker-s
 git clone https://github.com/schoenmedia/wp_docker_mac.git PROJEKT && cd PROJEKT
 
 cmd/init
-cmd/start
 cmd/terminal
 
+```bash
 rm index.php
 ./install-wordpress
-
 ```
 ## Directory to work in
 
