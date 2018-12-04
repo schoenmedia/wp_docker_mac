@@ -31,7 +31,8 @@ rm index.php
 ```
 
 ## URL
--------------|------------
+Service | Url
+------------ | -------------
 Webserver | dev.local
 PhpMyadmin | dev.local:8080
 Mailhog	| dev.local:8025
