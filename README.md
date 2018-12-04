@@ -29,6 +29,11 @@ rm index.php
 ./install-wordpress
 
 ```
+## Directory to work in
+
+```bash
+cd src/
+```
 
 ## URL
 Service | Url
