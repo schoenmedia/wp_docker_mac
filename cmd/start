@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# An alias for your loopback device, in order to use xdebug.remote_host feature
+sudo ifconfig lo0 alias 10.254.254.254
+
+# start sync
+docker-sync start && \
+
+# start docker container
+docker-compose up -d 
+
+echo "
+	-----------------------------------------------
+	
+		🏄 webserver: http://dev.local
+		🛠️  phpmyadmin: http://dev.local:8080
+		📥 mailhog: http://dev.local:8025
+
+	-----------------------------------------------
+"

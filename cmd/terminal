@@ -1,0 +1,4 @@
+ #!/bin/bash        
+          if [ -z "$1" ]; then 
+              docker-compose exec --user www-data php bash
+          fi

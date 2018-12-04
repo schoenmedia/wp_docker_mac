@@ -1,0 +1,15 @@
+version: "2"
+options:
+    verbose: true
+syncs:
+    <project>-sync:
+        sync_userid: '1000'
+        sync_strategy: 'native_osx'
+        host_disk_mount_mode: 'cached'
+        src: './src'
+        # optional, a list of excludes. These patterns will not be synced
+        # see http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#ignore for the possible syntax and see sync_excludes_type below
+        sync_excludes: ['.gitignore', '.git', 'node_modules']
+        # optional, a list of regular expressions to exclude from the fswatch - see fswatch docs for details
+        # IMPORTANT: this is not supported by native_osx
+        watch_excludes: ['.*/.git', '.*/node_modules', '.gitignore']   

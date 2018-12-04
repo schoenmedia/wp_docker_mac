@@ -1,0 +1,84 @@
+version: '2'
+
+services:
+    nginx: 
+        build: .docker/images/nginx
+        ports:
+            - 80:80 #web
+        volumes_from:
+            - appsrc
+        depends_on:
+            - db
+            - php
+        links:
+            - db
+            - php
+        networks:
+            - <project>-network
+    php:
+        build: .docker/images/phpfpm
+        ports:
+            - 9000:9000 #xdebug
+        environment:
+            XDEBUG_CONFIG: "remote_host=10.254.254.254 remote_connect_back=0"
+            PHP_IDE_CONFIG: "serverName=Docker"
+        volumes_from:
+            - appsrc
+        depends_on:
+            - db
+        links:
+            - db
+        environment:
+            - "DB_HOST=db"
+            - "MYSQL_DATABASE=wordpress"
+        networks:
+            - <project>-network
+    db:
+        image: mariadb
+        ports:
+            - 3300:3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=wordpress
+            - MYSQL_USER=wordpress
+            - MYSQL_PASSWORD=wordpress
+        volumes:
+            - dbdata:/var/lib/mysql
+        networks:
+            - <project>-network
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            - PMA_HOST=db
+            - PMA_USER=root
+            - PMA_PASSWORD=root
+            - MYSQL_ROOT_PASSWORD=root
+        ports:
+            - 8080:80
+        networks:
+            - <project>-network
+
+    mailhog:
+        image: mailhog/mailhog
+        ports:
+            - 1025:1025
+            - 8025:8025
+        networks:
+            - <project>-network
+# every container needs an image here a small one (125bytes) works for some dirr
+    appsrc:
+        image: tianon/true
+        volumes:
+            - <project>-sync:/var/www/html:nocopy
+            - ~/.composer:/var/www/.composer
+networks:
+    <project>-network:
+        driver: bridge
+
+volumes:
+    <project>-sync:
+        external: true
+    dbdata:
+        driver: local
+

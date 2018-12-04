@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if [ -z $1 ]; then
+    echo "Name of project?"
+    read project
+    export project=$project
+else
+    export project=$1
+fi
+
+# entry in etc/hosts
+echo "Should I maka an entry in /etc/hosts for dev.local?"
+select answer in "yes" "no"; do
+    case $answer in
+        [Yy]* ) sudo sed -i '' '/dev.local/d' /etc/hosts && sudo -- sh -c -e "echo '127.0.0.1   dev.local' >> /etc/hosts"; break;;
+        [Nn]* ) break;;
+    esac
+done
+
+# replace project name in docker-composer.yml
+sed -i.bak -e "s/<project>/$project/g" docker-compose.yml \
+&& sed -i.bak -e "s/<project>/$project/g" docker-sync.yml
+
+bash cmd/start

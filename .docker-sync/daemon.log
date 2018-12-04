@@ -1,0 +1,14 @@
+          ok  Starting native_osx for sync daytime-sync
+          ok  daytime-sync container still running, restarting unison in container
+     command  docker exec daytime-sync supervisorctl restart unison
+unison: stopped
+unison: started
+          ok  starting initial sync of daytime-sync
+     success  Sync container started
+     success  Showing unison logs from your sync container: daytime-sync
+[2018-12-01 18:02:37 +0100] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 18:02:37.35 on 01 Dec 2018
+[2018-12-01 18:02:37 +0100] Sync Log:  [BGN] Copying wp-content/uploads from /app_sync to /host_sync
+[2018-12-01 18:02:37 +0100] Sync Log:  [END] Copying wp-content/uploads
+[2018-12-01 18:02:37 +0100] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 18:02:37.36 on 01 Dec 2018
+[2018-12-01 18:02:37 +0100] Sync Log:  Synchronization complete at 18:02:37  (1 item transferred, 0 skipped, 0 failed)
+[2018-12-04 09:23:10 +0100] Sync Log:  Error response from daemon: Bad response from Docker engine
