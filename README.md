@@ -19,13 +19,20 @@ or an other option: [Advanced / optional](https://github.com/EugenMayer/docker-s
 
 ## Clone Repository
 ```
-git clone https://github.com/schoenmedia/wp_docker_mac.git PROJEKT && cd PROJEKT
+git clone https://github.com/schoenmedia/wp_docker_mac.git PROJECT && cd PROJECT
 
+# initialize project
 cmd/init
+
+# go to the php container bash
 cmd/terminal
 
+# execute following commands
 rm index.php
-./install-wordpress
+/usr/local/bin/install-wordpress
+exit
+
+# You´re done! 
 ```
 ## Directory to work in
 
@@ -38,6 +45,6 @@ Service | Url
 ------------ | -------------
 Webserver | dev.local
 PhpMyadmin | dev.local:8080
-Mailhog	| dev.local:8025
+Mailhog | dev.local:8025
 
 
