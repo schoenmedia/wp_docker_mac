@@ -7,7 +7,8 @@ else
 fi
 
 
-wp config create  --dbname=wordpress \
+wp config create  --path=/var/www/html/public_html/ \ 
+                  --dbname=wordpress \
                 --dbuser=wordpress \
                 --dbpass=wordpress \
                 --dbhost=db \
