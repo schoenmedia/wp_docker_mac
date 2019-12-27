@@ -9,42 +9,42 @@ ENV XDEBUG_PORT 9000
 
 RUN apt-get update \
         && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-	    software-properties-common \
-	    && apt-get update \
+        software-properties-common \
+        && apt-get update \
         && DEBIAN_FRONTEND=noninteractive apt-get install -y \  
         libfreetype6-dev \
-	    libjpeg62-turbo-dev \
+        libjpeg62-turbo-dev \
         libpng-dev \
-	    libicu-dev \
+        libicu-dev \
         libssl-dev \
-	    libmcrypt-dev \
-	    libedit-dev \
-	    libedit2 \
-	    libxslt1-dev \
+        libmcrypt-dev \
+        libedit-dev \
+        libedit2 \
+        libxslt1-dev \
         apt-utils \
         vim \
         mysql-client \
-	    git \
-	    wget \
-	    curl \
+        git \
+        wget \
+        curl \
         tar \
         bash-completion \
         && apt-get clean
 
 # php extensions
 RUN docker-php-ext-configure \
-  	    gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/; \
-  	    docker-php-ext-install \
-  	    opcache \
-  	    gd \
-  	    bcmath \
-  	    intl \
-  	    mbstring \
+        gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/; \
+        docker-php-ext-install \
+        opcache \
+        gd \
+        bcmath \
+        intl \
+        mbstring \
         mysqli \
-  	    pdo_mysql \
-  	    soap \
-  	    xsl \
-  	    zip
+        pdo_mysql \
+        soap \
+        xsl \
+        zip
 
 RUN apt-get update && apt-get install -y libmagickwand-6.q16-dev --no-install-recommends \
  && ln -s /usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/bin-Q16/MagickWand-config /usr/bin \
@@ -92,6 +92,16 @@ RUN yes | pecl install xdebug && \
      echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini
 COPY config/custom-xdebug.ini /usr/local/etc/php/conf.d/custom-xdebug.ini
 
+# install node
+ENV NODE_VERSION=13.5.0
+RUN apt install -y curl
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+ENV NVM_DIR=/var/www/.nvm
+RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
+ENV PATH="/var/www/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+
 
 # User
 RUN usermod -u 1000 www-data
@@ -108,8 +118,8 @@ RUN chmod +x /usr/local/bin/*
 
 #  wpcli - the command line interface for WordPress
 RUN curl --silent --show-error -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \ 
-		&& chmod +x wp-cli.phar \
-		&& mv wp-cli.phar /usr/local/bin/wp
+        && chmod +x wp-cli.phar \
+        && mv wp-cli.phar /usr/local/bin/wp
 
 RUN chown -R www-data:1000 /var/www
 
