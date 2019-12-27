@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 if [ $@ ]; then
-    wp core download --locale=de_DE --version=$1
+    wp core download --path=/var/www/html/public_html/ --locale=de_DE --version=$1
 else
-    wp core download --locale=de_DE --version=latest
+    wp core download --path=/var/www/html/public_html/ --locale=de_DE --version=latest
 fi
 
 
