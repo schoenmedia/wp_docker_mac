@@ -102,6 +102,8 @@ RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
 RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
 ENV PATH="/var/www/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 
+#install gulp globally
+RUN npm install --global gulp-cli
 
 # User
 RUN usermod -u 1000 www-data

@@ -10,5 +10,9 @@ read cssfolderdest
 # replace paths in gulpfile.js
 sed -i.bak -e "s/<themefolder>/${themefolder//\//\\/}/g; s/<cssfolderdest>/${cssfolderdest//\//\\/}/g"  /var/www/html/src/gulp-assets/gulpfile.js
 
+
+cd /var/www/html/src/gulp-assets/
+npm install --global gulp-cli
+
 # end statement
-echo "Gulpfile changed!"
+echo "Gulp is ready!"
