@@ -27,12 +27,10 @@ cmd/init
 # go to the php container bash
 cmd/terminal
 
-# execute following commands
-## Wordpress 
-```bash
-install-wordpress
-```
-## Gulp Configuration
+# Wordpress installation
+wordpress-install
+
+# Gulp Configuration and npm install in src/gulp-assets
 gulp-init
 
 ## Close docker bash
@@ -42,8 +40,28 @@ exit
 ```
 ## Directory to work in
 
-```bash
-cd src/
+```
+# Wordpress
+cd project/public_html
+
+# Gulp configuration and css files for wp-theme 
+cd project/src/gulp-assets
+```
+
+## Commands on docker from host 
+```
+# Start
+cmd/start
+
+# Stop
+cmd/stop
+
+# Interactive bash 
+cmd/terminal
+
+# Gulp watch
+cmd/gulp
+
 ```
 
 ## URL
