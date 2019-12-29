@@ -28,8 +28,14 @@ cmd/init
 cmd/terminal
 
 # execute following commands
-rm index.php
-/usr/local/bin/install-wordpress
+## Wordpress 
+```bash
+install-wordpress
+```
+## Gulp Configuration
+gulp-init
+
+## Close docker bash
 exit
 
 # You´re done! 
