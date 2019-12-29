@@ -1,0 +1,5 @@
+ #!/bin/bash        
+          
+if [ -z "$1" ]; then 
+    docker-compose exec --privileged -T php  gulp --gulpfile /var/www/html/src/gulp-assets/gulpfile.js
+fi

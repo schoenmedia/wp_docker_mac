@@ -1,4 +1,4 @@
-const { series, src, dest } = require('gulp');
+const { watch, series, src, dest } = require('gulp');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const tailwindcss = require('tailwindcss');
@@ -7,7 +7,6 @@ const cssnano = require('gulp-cssnano');
 
 const base_src = 'src/';
 const base_dest = '/var/www/html/public_html/wp-content/themes/<themefolder>/';
-
 
 function css(cb){
     const plugins = [
@@ -22,11 +21,6 @@ function css(cb){
         .pipe( dest(base_dest + '<cssfolderdest>') );
 }
 
-
-function defaultTask(cb){
-    // code here
-
-    cb();
-}
-
-exports.default = series( css )
+exports.default = function(){
+    watch('src/css/*.css', series(css));
+};
