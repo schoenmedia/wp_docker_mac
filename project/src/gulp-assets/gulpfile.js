@@ -6,7 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('gulp-cssnano');
 
 const base_src = 'src/';
-const base_dest = '/var/www/public_html/wp-content/themes/<themefolder>/';
+const base_dest = '/var/www/html/public_html/wp-content/themes/<themefolder>/';
 
 
 function css(cb){
