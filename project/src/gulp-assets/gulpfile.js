@@ -19,7 +19,7 @@ function css(cb){
         .pipe(sourcemaps.init())
         .pipe(cssnano())
         .pipe(sourcemaps.write('.'))
-        .pipe( dest(base_dest + '<cssfolder>') );
+        .pipe( dest(base_dest + '<cssfolderdest>') );
 }
 
 
