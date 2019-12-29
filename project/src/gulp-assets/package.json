@@ -1,0 +1,22 @@
+{
+  "name": "gulp-assets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.3",
+    "gulp": "^4.0.2",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sourcemap": "^1.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "tailwindcss": "^1.1.4"
+  },
+  "dependencies": {}
+}

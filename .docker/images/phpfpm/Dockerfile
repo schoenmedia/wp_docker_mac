@@ -116,6 +116,9 @@ COPY bin/* /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/*
 
+ENV PATH=/usr/local/bin:$PATH
+
+
 #  wpcli - the command line interface for WordPress
 RUN curl --silent --show-error -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \ 
         && chmod +x wp-cli.phar \
