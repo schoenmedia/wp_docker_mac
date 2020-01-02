@@ -27,6 +27,5 @@ Temporary Items
 .apdisk
 
 # node modules
-project/src/gulp-assets/node_modules/
-project/src/gulp-assets/package-lock.json
-project/src/gulp-assets/public_html/
+.docker/images/phpfpm/wptheme/node_modules/
+.docker/images/phpfpm/wptheme/package-lock.json

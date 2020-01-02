@@ -1,0 +1,21 @@
+ #!/usr/bin/env bash
+
+# dest path config for gulp
+echo "Wordpress Theme folder ?"
+read themefolder
+
+echo "destination css folder?"
+read cssfolderdest
+
+theme="/var/www/html/public_html/wp-content/themes/$themefolder"
+mkdir $theme
+mv /var/www/html/wptheme/ $theme/
+
+# replace paths in gulpfile.js
+sed -i.bak -e "s/<themefolder>/${themefolder//\//\\/}/g; s/<cssfolderdest>/${cssfolderdest//\//\\/}/g"  $theme/gulpfile.js
+
+cd $theme
+npm install
+
+# end statement
+echo "$themefolder is ready!"
