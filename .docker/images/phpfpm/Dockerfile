@@ -121,7 +121,7 @@ RUN chmod +x /usr/local/bin/*
 ENV PATH=/usr/local/bin:$PATH
 
 # starter theme for wordpress
-COPY wptheme /var/www/html/
+COPY wptheme/ /usr/src/wptheme/
 
 #  wpcli - the command line interface for WordPress
 RUN curl --silent --show-error -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \ 

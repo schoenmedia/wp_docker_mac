@@ -9,7 +9,7 @@ read cssfolderdest
 
 theme="/var/www/html/public_html/wp-content/themes/$themefolder"
 mkdir $theme
-mv /var/www/html/wptheme/ $theme/
+mv /usr/src//wptheme/ $theme/
 
 # replace paths in gulpfile.js
 sed -i.bak -e "s/<themefolder>/${themefolder//\//\\/}/g; s/<cssfolderdest>/${cssfolderdest//\//\\/}/g"  $theme/gulpfile.js
