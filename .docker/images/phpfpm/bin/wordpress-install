@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+rm -rf /var/www/html/*
 if [ $@ ]; then
     wp core download --path=/var/www/html/ --locale=de_DE --version=$1
 else
