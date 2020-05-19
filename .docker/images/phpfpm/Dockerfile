@@ -23,7 +23,7 @@ RUN apt-get update \
         libxslt1-dev \
         apt-utils \
         vim \
-        mysql-client \
+        mariadb-client \
         git \
         wget \
         curl \
