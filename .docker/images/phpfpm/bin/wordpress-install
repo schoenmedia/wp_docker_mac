@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
 if [ $@ ]; then
-    wp core download --path=/var/www/html/public_html/ --locale=de_DE --version=$1
+    wp core download --path=/var/www/html/ --locale=de_DE --version=$1
 else
-    wp core download --path=/var/www/html/public_html/ --locale=de_DE --version=latest
+    wp core download --path=/var/www/html/ --locale=de_DE --version=latest
 fi
 
 
-wp config create --path=/var/www/html/public_html/ \
+wp config create --path=/var/www/html/ \
                 --dbname=wordpress \
                 --dbuser=wordpress \
                 --dbpass=wordpress \
                 --dbhost=db \
                 --dbprefix=wp_ \
-&& wp core install  --path=/var/www/html/public_html/ \
+&& wp core install  --path=/var/www/html/ \
                     --url=dev.local \
                     --title=Example \
                     --admin_user=admin \
