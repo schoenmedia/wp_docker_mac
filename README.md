@@ -19,7 +19,7 @@ or an other option: [Advanced / optional](https://github.com/EugenMayer/docker-s
 
 ## Clone Repository
 ```
-git clone https://github.com/schoenmedia/wp_docker_mac.git PROJECT && cd PROJECT
+$ git clone https://github.com/schoenmedia/wp_docker_mac.git PROJECT && cd PROJECT
 
 # initialize project
 $ cmd/init
@@ -30,7 +30,7 @@ $ cmd/terminal
 # Wordpress installation
 $ wordpress-install
 
-## Close docker bash
+# Close docker bash
 $ exit
 
 # Gulp 
