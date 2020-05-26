@@ -1,0 +1,38 @@
+{
+  "name": "str-styles-scripts",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "autoprefixer": "^9.8.0",
+    "babel-loader": "^8.1.0",
+    "bootstrap": "^4.3.1",
+    "browserlist": "^1.0.1",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^1.9.1",
+    "node-sass": "^4.12.0",
+    "popper.js": "^1.15.0",
+    "uglify-es": "^3.3.9",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "micromodal": "^0.4.0"
+  }
+}

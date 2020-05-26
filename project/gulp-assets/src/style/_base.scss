@@ -1,0 +1,13 @@
+
+$base-background-color: #fff;
+$base-color: #000;
+
+html {
+    touch-action: manipulation;
+}
+
+html, body {
+    background-color: $base-background-color;
+    color: $base-color;
+}
+

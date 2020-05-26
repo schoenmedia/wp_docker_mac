@@ -22,19 +22,30 @@ or an other option: [Advanced / optional](https://github.com/EugenMayer/docker-s
 git clone https://github.com/schoenmedia/wp_docker_mac.git PROJECT && cd PROJECT
 
 # initialize project
-cmd/init
+$ cmd/init
 
 # go to the php container bash
-cmd/terminal
+$ cmd/terminal
 
 # Wordpress installation
-wordpress-install
-
-# Gulp Configuration and npm install in src/gulp-assets
-gulp-init
+$ wordpress-install
 
 ## Close docker bash
-exit
+$ exit
+
+# Gulp 
+$ cd project/gulp-assets
+Edit Template Path in gulpfile.js
+
+$ npm install
+
+## start gulp
+$ gulp watching
+
+## gulp directories to work in
+project/gulp-assets/src/style/
+project/gulp-assets/src/javascript/
+
 
 # You´re done! 
 ```
