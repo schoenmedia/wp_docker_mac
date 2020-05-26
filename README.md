@@ -42,21 +42,17 @@ $ npm install
 ## start gulp
 $ gulp watching
 
-## gulp directories to work in
-project/gulp-assets/src/style/
-project/gulp-assets/src/javascript/
-
-
 # You´re done! 
 ```
 ## Directory to work in
 
 ```
 # Wordpress
-cd project/public_html
+$ cd project/public_html
 
-# Gulp configuration and css files for wp-theme 
-cd project/src/gulp-assets
+# Gulp css/js files for wp-theme 
+$ cd project/gulp-assets/src/style/
+$ cd project/gulp-assets/src/javascript/
 ```
 
 ## Commands on docker from host 
@@ -69,9 +65,6 @@ cmd/stop
 
 # Interactive bash 
 cmd/terminal
-
-# Gulp watch
-cmd/gulp
 
 ```
 
