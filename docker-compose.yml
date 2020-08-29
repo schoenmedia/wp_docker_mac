@@ -54,6 +54,7 @@ services:
             - PMA_USER=root
             - PMA_PASSWORD=root
             - MYSQL_ROOT_PASSWORD=root
+            - UPLOAD_LIMIT=256M
         ports:
             - 8080:80
         networks:
