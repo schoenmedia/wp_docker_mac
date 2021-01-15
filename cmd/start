@@ -12,9 +12,9 @@ docker-compose up -d
 echo "
 	-----------------------------------------------
 	
-		🏄 webserver: http://dev.local
-		🛠️  phpmyadmin: http://dev.local:8080
-		📥 mailhog: http://dev.local:8025
+		🏄 webserver: http://dev.locals
+		🛠️  phpmyadmin: http://dev.locals:8080
+		📥 mailhog: http://dev.locals:8025
 
 	-----------------------------------------------
 "

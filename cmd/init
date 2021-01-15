@@ -9,10 +9,10 @@ else
 fi
 
 # entry in etc/hosts
-echo "Should I make an entry in /etc/hosts for dev.local?"
+echo "Should I make an entry in /etc/hosts for dev.locals"
 select answer in "yes" "no"; do
     case $answer in
-        [Yy]* ) sudo sed -i '' '/dev.local/d' /etc/hosts && sudo -- sh -c -e "echo '127.0.0.1   dev.local' >> /etc/hosts"; break;;
+        [Yy]* ) sudo sed -i '' '/dev.locals/d' /etc/hosts && sudo -- sh -c -e "echo '127.0.0.1   dev.locals' >> /etc/hosts"; break;;
         [Nn]* ) break;;
     esac
 done
