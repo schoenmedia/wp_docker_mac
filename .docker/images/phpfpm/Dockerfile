@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.3-fpm
 
 MAINTAINER Sebastian Schön <schoen@schoenmedia.de>
 
@@ -21,6 +21,7 @@ RUN apt-get update \
         libedit-dev \
         libedit2 \
         libxslt1-dev \
+	libzip-dev\
         apt-utils \
         vim \
         mariadb-client \
@@ -52,7 +53,7 @@ RUN apt-get update && apt-get install -y libmagickwand-6.q16-dev --no-install-re
  && echo "extension=imagick.so" > /usr/local/etc/php/conf.d/ext-imagick.ini
 
 RUN apt-get install libmcrypt-dev
-RUN pecl install mcrypt-1.0.1 && docker-php-ext-enable mcrypt
+RUN pecl install mcrypt-1.0.4 && docker-php-ext-enable mcrypt
 
 # Register the COMPOSER_HOME environment variable
 ENV COMPOSER_HOME /var/www/.composer
@@ -62,7 +63,7 @@ ENV PATH /var/www/.composer/vendor/bin:$PATH
 
 # Install Composer
 RUN curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
-RUN composer global require hirak/prestissimo
+#RUN composer global require hirak/prestissimo
 
 
 # Install Codesniffer
