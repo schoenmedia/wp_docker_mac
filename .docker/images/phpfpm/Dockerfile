@@ -55,6 +55,9 @@ RUN apt-get update && apt-get install -y libmagickwand-6.q16-dev --no-install-re
 RUN apt-get install libmcrypt-dev
 RUN pecl install mcrypt-1.0.4 && docker-php-ext-enable mcrypt
 
+# Subversion for wordpress tesdatabase install
+RUN apt-get install subversion
+
 # Register the COMPOSER_HOME environment variable
 ENV COMPOSER_HOME /var/www/.composer
 
